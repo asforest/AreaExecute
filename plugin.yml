@@ -1,19 +1,10 @@
-name: AreaCommand
-main: cn.innc11.AreaCommand.Main
+name: AreaExecute
+main: cn.innc11.areaexecute.Main
 version: "1.0"
 author: innc11
 api: ["1.0.0"]
-prefix: "AreaCommand"
 commands:
-  addca:
-    description: "add a Portal"
-    usage: "/addca <name>"
-  delca:
-    description: "remove a portal"
-    usage: "/delca <name>"
-  cmdca:
-    description: "set a command to a ca"
-    usage: "/cmdca <name> [<server|player> <command>]"
-  listca:
-    description: "show Ca list"
-    usage: "/listca"
+  blockcommand:
+    description: "AreaExecute plugin"
+    aliases: ["ae", "acc"]
+    usage: "/bc <set/remove/list/reload> [args]"
