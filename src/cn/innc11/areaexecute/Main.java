@@ -18,7 +18,6 @@ import cn.nukkit.utils.TextFormat;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Main extends PluginBase implements Listener
 {
@@ -95,10 +94,10 @@ public class Main extends PluginBase implements Listener
     void sendHelp(Player player)
     {
         player.sendMessage(TextFormat.colorize("&a------AreaExecute------"));
-        player.sendMessage(TextFormat.colorize("&2/ae set <name> <p/s> <command>  创建/更新"));
-        player.sendMessage(TextFormat.colorize("&2/ae remove <name>   移除"));
-        player.sendMessage(TextFormat.colorize("&2/ae list 列表"));
-        player.sendMessage(TextFormat.colorize("&2/ae reload 重新加载"));
+        player.sendMessage(TextFormat.colorize("&3/ae set <name> <p/s> <command>  创建/更新"));
+        player.sendMessage(TextFormat.colorize("&3/ae remove <name>   移除"));
+        player.sendMessage(TextFormat.colorize("&3/ae list   列表"));
+        player.sendMessage(TextFormat.colorize("&3/ae reload   重新加载"));
     }
 
     @Override
@@ -163,6 +162,7 @@ public class Main extends PluginBase implements Listener
 
                     if(areas.containsKey(name))
                     {
+                        player.sendMessage("已移除"+name);
                         areas.remove(name);
                         save();
                     }else{
@@ -176,7 +176,7 @@ public class Main extends PluginBase implements Listener
 
             case "list":
             {
-                player.sendMessage("----\"指令方块\"列表----");
+                player.sendMessage("----AreaExecute列表----");
 
                 areas.forEach((name, area)->
                 {
@@ -206,7 +206,6 @@ public class Main extends PluginBase implements Listener
 
         return true;
     }
-
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e)
